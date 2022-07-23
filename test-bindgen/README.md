@@ -5,7 +5,8 @@
 > rustup target add wasm32-unknown-unknown
 
 ## 2. Installing wasm-bindgen
-## Install rustup nightly, and webassembly bindgen command line tool ## here we are specifically calling it from the nightly branch of rust.
+### Install rustup nightly, and webassembly bindgen command line tool 
+### here we are specifically calling it from the nightly branch of rust.
 
 > rustup toolchain install nightly
 > cargo +nightly install wasm-bindgen-cli
@@ -38,13 +39,28 @@ crate-type = ["cdylib"]
 
 
 # Run project
-## 1. 
+### 1. 
 > yarn install 
-## 2. 
+### 2. 
 > yarn serve
-## 3. look at localhost:8080
+### 3. look at localhost:8080
 
+# Publish our library:
 
+### use wasm-pack login before publishig to login to npm (node package manager).
+
+> wasm-pack publish
+
+### to inatall the package in other project :
+
+> npm install --save my-wasm-lib
+> npm start
+
+### in index.js of new wasm/js app import my-wasm-lib 
+
+import("my-wasm-lib").then(module => {
+    module.call_function(parameters);
+})
 
 
 
